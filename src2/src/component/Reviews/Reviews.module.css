@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.main_block_reviwes {
+    scroll-behavior: smooth;    
+
+}
+.comment__text {
+    font-size: 1.4em;
+    margin-left: 15px;
+    margin-top: 25px;
+}
+.main_block_reviwes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.block_comment {
+    width: 870px;
+    height: 223px;
+    border: solid 1px black;
+    margin-top: 50px;
+    display: flex;
+}
+.comment__name {
+    margin-left: 35px;
+    width: 150px;
+    border-right: solid 1px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.comment__name > h3 {
+    margin-top: 25px;
+    margin-right: 25px;
+    text-decoration: underline;
+}
+.comment__name > p {
+    margin-bottom: 25px;
+    font-size: 1.1em;
+}
+.input_comment {
+    height: 300px;
+    width: 500px;
+    border: solid 1px black;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.input_comment__name {
+    height: 60px;
+    border-bottom: solid 2px black;
+}
+.input_comment__name > input {
+    margin-top: 15px;
+    margin-left: 35px;
+    border: none;
+    border-bottom: solid 1.5px gray;
+    width: 250px;
+    height: 30px;
+    font-size: 1.3em;
+}
+.input_comment__name > input:focus {
+    outline: none;
+    transition: 0.3s;
+    padding: 3px;
+}
+.input_comment__text > textarea {
+    margin-top: 15px;
+    margin-left: 35px;
+    border: none;
+    border-bottom: solid 1.5px gray;
+    width: 450px;
+    height: 30px;
+    resize: none;
+    font-size: 1.4em;
+}
+.input_comment__text > textarea:focus {
+    outline: none;
+    transition: 0.2s;
+    height: 130px;
+    border-bottom: solid 1.7px gray;
+}
+.block_input_comment {
+    margin-left: 130px;
+}
+.block_block_comment {
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.buttons_input_comment {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 15px;
+    margin-bottom: 5px;
+    border-top: solid 1px black;
+}
+.buttons_input_comment > input{
+    width: 170px;
+    height: 50px;
+    border: solid 1.5px gray;
+    border-radius: 5px;
+    background-color: white;
+    color: indigo;
+    font-size: 1.3em;
+}
+.buttons_input_comment > input:focus{ 
+    outline: none;
+}
+.buttons_input_comment > input:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+    background-color: indigo;
+}
+.anchor {
+    background-color: indigo;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+}

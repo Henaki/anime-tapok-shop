@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+footer {
+    height: 150px;
+    border: solid 1px black;
+    font-size: 1.3em;
+    color: white;
+    background-color: #142329;
+}
+.footer_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+ul {
+    list-style: none;
+    cursor: pointer;
+    color: white;
+}
+a {
+    list-style: none;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
+.button_from_otzivi {
+    width: 150px;
+    height: 55px;
+    align-self: center;
+    font-size: 1.2em;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 5px;
+    color: #615c85;
+    margin-right: -80px;
+}
+.button_from_otzivi:focus {
+    outline: none;
+}
+.button_from_otzivi:hover {
+    transition: 0.3s;
+    background-color: #615c85;
+    color: white;
+    cursor: pointer;
+}
+.footer_list > ul > li > a {
+    text-decoration: none;
+    color: black;
+}

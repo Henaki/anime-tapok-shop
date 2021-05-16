@@ -1,0 +1,14 @@
+.slider_main {
+    outline: none;
+    margin-top: 20px;
+    width: 1100px;
+}
+.slider_main_border_costil {
+    width: 1200px;
+    margin-left: 35px;
+}
+.photo_slider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

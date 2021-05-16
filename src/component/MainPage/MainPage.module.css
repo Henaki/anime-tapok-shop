@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.background {
+    background-color: #f7f8fa;
+}
+.main_content_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.main_slider {
+    display: flex;
+    width: 1370px;
+    height: 450px;
+    margin-top: 70px;
+    align-self: center;
+    margin-left: 100px;
+}
+.main_catalog {
+    display: flex;
+    width: 1200px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.main_catalog__tovar {
+    background-color: rgb(255, 255, 255);
+    border: solid 1px rgba(70, 70, 70, 0.281);
+    border-radius: 5px;
+    width: 1200px;
+    min-height: 150px;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+}
+.main_catalog__tovar:hover {
+    transition: 0.2s;
+    cursor: pointer;
+    background-color: rgb(248, 248, 248);
+}
+.main_catalog__tovar > h3 {
+    font-size: 1.8em;
+    width: 400px;
+}
+.main_catalog__tovar > p {
+    font-size: 2em;
+    color: green;
+    width: 130px;
+}
+.main_catalog__tovar > img {
+    object-fit: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+}
+.button_from_buy {
+    width: 135px;
+    height: 55px;
+    background-color: rgb(255, 255, 255);
+    border: solid 1px gray;
+    border-radius: 10px;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #615c85;
+    margin-right: 50px;
+}
+.button_from_buy:focus {
+    outline: none;
+}
+.button_from_buy:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+    background-color: #615c85;
+}
+.button_from_catalog {
+    width: 559px;
+    height: 60px;
+    margin-top: 40px;
+    background-color: rgb(255, 255, 255);
+    border: solid 1px gray;
+    border-radius: 10px;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #615c85;
+    margin-bottom: 50px;
+}
+.button_from_catalog:focus {
+    outline: none;
+}
+.button_from_catalog:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+    background-color: #615c85;
+}
