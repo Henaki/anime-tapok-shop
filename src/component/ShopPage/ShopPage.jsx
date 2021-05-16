@@ -47,7 +47,7 @@ const ShopPage = () => {
     }
 
     useEffect(() => {
-        Aos.init({ duration: 350 })
+        Aos.init({ duration: 400 })
     }, []);
     return (
         <section>
