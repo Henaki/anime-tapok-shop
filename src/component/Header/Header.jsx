@@ -68,8 +68,6 @@ const Header = (props) => {
     return (
 
         <section>
-            <div className={style.left_line}></div>
-            <div className={style.right_line}></div>
             <div className={style.header_main}>
                 <div className={style.header_content}>
                     <label for="bok__menu" className={style.style_bok_menu}>

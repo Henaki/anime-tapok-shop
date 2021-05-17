@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Switch, Link, Route } from 'react-router-dom';
 import ItemPage from '../ItemPage/ItemPage';
 import MainPage from '../MainPage/MainPage';
