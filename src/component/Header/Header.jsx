@@ -5,21 +5,42 @@ import { useForm } from "react-hook-form";
 import { cyeta } from './../../state'
 import { Grid } from '@material-ui/core';
 import state from '../../state';
+import Form from './FormLoginDa/Costilform'
 
 
 const Header = (props) => {
+    let [chb1, setChb1] = useState(false);
+    let [chb2, setChb2] = useState(false)
     let userName = '';
     let [userNameRole, setUserNameRole] = useState(0);
-    if(userNameRole == 0) {
+    if (userNameRole == 0) {
         userName = 'Гость';
     } else {
         state.users.map((user) => {
-            if(user.id == userNameRole)
-            return (
-                userName = user.name
-            )});
+            if (user.id == userNameRole)
+                return (
+                    userName = user.name
+                )
+        });
     }
-
+    const ClickReg = () => {
+        setChecked_btn(checked_btn = false);
+        setChb2(chb2 = false)
+        if (!chb1) {
+            setChb1(chb1 = true)
+        } else {
+            setChb1(chb1 = false)
+        }
+    }
+    const ClickLog = () => {
+        setChecked_btn(checked_btn = false);
+        setChb1(chb1 = false)
+        if (!chb2) {
+            setChb2(chb2 = true)
+        } else {
+            setChb2(chb2 = false)
+        }
+    }
     let [state, dispatch] = useReducer(cyeta, "");
     let textContext = React.createContext(state);
 
@@ -36,6 +57,8 @@ const Header = (props) => {
     })
 
     const onClick = () => {
+        setChb1(chb1 = false)
+        setChb2(chb2 = false)
         if (checked_btn) {
             setChecked_btn(checked_btn = false);
 
@@ -77,7 +100,7 @@ const Header = (props) => {
                     <input type="checkbox" id="bok__menu" className={style.bok_menu_btn} onClick={onClick} checked={checked_btn} />
                     <div className={style.bok_menu}>
                         <ul>
-                            
+
                             <p className={style.title_bok_menu}>Меню</p>
                             <Link className={style.bok_menu_item} to="/">
                                 <li>Главная</li>
@@ -90,7 +113,7 @@ const Header = (props) => {
                                 <li>Отзывы</li>
                             </Link>
                             <Link to="/pagination">
-                            <li className={style.bok_menu_item}>FAQ</li>
+                                <li className={style.bok_menu_item}>FAQ</li>
                             </Link>
                             <li className={style.bok_menu_item}>Пользовательское соглашение</li>
                         </ul>
@@ -111,13 +134,53 @@ const Header = (props) => {
                     </div>
                     <div className={style.inputs_sign_login}>
                         <div className={style.button_signup}>
-                            <input id="bitton_signup" type="submit" value="Регистрация" className={style.button_signup_btn} name="signup" />
+                            <input type="checkbox" className={style.checkbox_signup__disabled} checked={chb1} />
+                            <label className={style.button_signup_btn} onClick={ClickReg}>Регистрация</label>
+                            <div className={style.bok_menu_signup}>
+                                <form className={style.form_signup} onSubmit={handleSubmit(onSubmit)}>
+                                    <div className={style.title_block_signup}>
+                                        <p className={style.title_bok_menu_signup}>Регистрация</p>
+                                        <img className={style.style_bok_menu_signup_close} src="krest.png" alt="" width="50px" height="50px" onClick={ClickReg} />
+                                    </div>
+                                    <div className="">
+                                        <label for="login">Логин</label>
+                                        <input ref={register} type="text" name="login" className={style.input_in_signup} />
+                                    </div>
+                                    <div className="">
+                                        <label for="email">Почта</label>
+                                        <input ref={register} type="email" name="email" className={style.input_in_signup} />
+                                    </div>
+                                    <div className="">
+                                        <label for="password">Пароль</label>
+                                        <input ref={register} type="password" name="password" className={style.input_in_signup} />
+                                    </div>
+                                    <div className="">
+                                        <label for="confirm_password">Повторите пароль</label>
+                                        <input ref={register} type="password" name="confirm_password" className={style.input_in_signup} />
+                                    </div>
+                                    <input type="submit" value="Зарегистрироваться" className={style.btn_from_signup_form} />
+                                    <p className={style.again_password_text}>Забыли пароль?</p>
+                                    <p className={style.user_sogl}>Пользовательское соглашение</p>
+                                </form>
+                            </div>
                         </div>
                         <div className={style.button_login}>
-                            <input id="button_login" type="submit" className={style.button_login_btn} value="Войти" name="login" />
+                            <input type="checkbox" id="login" className={style.checkbox_login__disabled} checked={chb2} />
+                            <label for="login" className={style.button_login_btn} onClick={ClickLog}>Войти</label>
+                            <div className={style.bok_menu_login}>
+                                <div className={style.form_login} >
+                                    <div className={style.title_block_login}>
+                                        <p className={style.title_bok_menu_login}>Авторизация</p>
+                                        <img className={style.style_bok_menu_login_close} src="krest.png" alt="" width="50px" height="50px" onClick={ClickLog}/>
+                                    </div>
+                                        <Form/>
+                                    <p className={style.again_password_text}>Забыли пароль?</p>
+                                    <p className={style.user_sogl}>Пользовательское соглашение</p>
+                                </div>
+                            </div>
                         </div>
                         <div className={style.input_nickname}>
-                            <p className={style.input_nickname__text}>Вы, {userName} </p>
+                            <p className={style.input_nickname__text}>{userName}</p>
                         </div>
                     </div>
                 </div>
