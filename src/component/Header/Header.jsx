@@ -6,9 +6,13 @@ import { cyeta } from './../../state'
 import { Grid } from '@material-ui/core';
 import state from '../../state';
 import Form from './FormLoginDa/Costilform'
+import axios from 'axios';
 
 
-const Header = (props) => {
+const Header = ({ setUser, user }) => {
+
+
+
     let [chb1, setChb1] = useState(false);
     let [chb2, setChb2] = useState(false)
     let userName = '';
@@ -86,8 +90,12 @@ const Header = (props) => {
 
 
     const { register, handleSubmit } = useForm();
-    const onSubmit = (data) => alert(JSON.stringify(data));
-
+    const onSubmit = (data) => {
+        const urlAPI = "http://at-shop/api/signup";
+        axios.post(urlAPI, data).then((data) => {
+            console.log(data.data.body.message)
+        });
+    }
     return (
 
         <section>
@@ -100,7 +108,7 @@ const Header = (props) => {
                     <input type="checkbox" id="bok__menu" className={style.bok_menu_btn} onClick={onClick} checked={checked_btn} />
                     <div className={style.bok_menu}>
                         <ul>
-
+                            <img className={style.style_bok_menu_close} src="krest.png" alt="" width="50px" height="50px" onClick={onClick} />
                             <p className={style.title_bok_menu}>Меню</p>
                             <Link className={style.bok_menu_item} to="/">
                                 <li>Главная</li>
@@ -156,7 +164,7 @@ const Header = (props) => {
                                     </div>
                                     <div className="">
                                         <label for="confirm_password">Повторите пароль</label>
-                                        <input ref={register} type="password" name="confirm_password" className={style.input_in_signup} />
+                                        <input ref={register} type="password" name="password_confirm" className={style.input_in_signup} />
                                     </div>
                                     <input type="submit" value="Зарегистрироваться" className={style.btn_from_signup_form} />
                                     <p className={style.again_password_text}>Забыли пароль?</p>
@@ -171,16 +179,16 @@ const Header = (props) => {
                                 <div className={style.form_login} >
                                     <div className={style.title_block_login}>
                                         <p className={style.title_bok_menu_login}>Авторизация</p>
-                                        <img className={style.style_bok_menu_login_close} src="krest.png" alt="" width="50px" height="50px" onClick={ClickLog}/>
+                                        <img className={style.style_bok_menu_login_close} src="krest.png" alt="" width="50px" height="50px" onClick={ClickLog} />
                                     </div>
-                                        <Form/>
+                                    <Form setUser={setUser} user={user} />
                                     <p className={style.again_password_text}>Забыли пароль?</p>
                                     <p className={style.user_sogl}>Пользовательское соглашение</p>
                                 </div>
                             </div>
                         </div>
                         <div className={style.input_nickname}>
-                            <p className={style.input_nickname__text}>{userName}</p>
+                            <p className={style.input_nickname__text}>{}</p>
                         </div>
                     </div>
                 </div>

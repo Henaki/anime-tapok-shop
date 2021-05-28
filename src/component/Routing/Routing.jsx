@@ -14,39 +14,44 @@ import AllProjects from '../PaginationProb/PaginationProb'
 
 
 const Routing = () => {
+    const [userName, setUserName] = useState('');
+    console.log("=========================");
+    console.log(userName);
+    console.log("=========================");
     return (
         <>
-        <Header />
-        <Switch>
-        <Route path="/pagination" component={AllProjects} />
-            <Route exact path="/" component={MainPage} />
-            <Route path="/reviews" component={Reviwes} />
-            <Route path="/shop" component={ShopPage} />
-            <Route path="/item" component={ItemPage} />
-            <Route path="/search" >
-                <SearchInput />
-            </Route>
-            <Route component={NotFound} />
+            <Header setUser={setUserName} user={userName} />
+            <Switch>
+                <Route path="/pagination" component={AllProjects} />
+                <Route exact path="/" component={MainPage} />
+                <Route path="/reviews" component={Reviwes} />
+                <Route path="/shop" component={ShopPage} />
+                <Route path="/item" component={ItemPage} />
+                <Route path="/search" >
+                    <SearchInput />
+                </Route>
+                <Route component={NotFound} />
 
-            
 
-        </Switch>
-        <ScrollUpButton 
-        StopPosition={0}
-        ShowAtPosition={250}
-        EasingType='easeInOutCubic'
-        AnimationDuration={600}
-        ContainerClassName='ScrollUpButton__Container'
-        TransitionClassName='ScrollUpButton__Toggled'
-        style={{outline: 'none',
-        border: 'none',
-        backgroundColor: 'rgba(46, 84, 99, 0.7)',
-        opacity: '0.5',
-        color: '#ffffff'
-    }}
-        ToggledStyle={{}}
-        />
-        <Footer />
+
+            </Switch>
+            <ScrollUpButton
+                StopPosition={0}
+                ShowAtPosition={250}
+                EasingType='easeInOutCubic'
+                AnimationDuration={600}
+                ContainerClassName='ScrollUpButton__Container'
+                TransitionClassName='ScrollUpButton__Toggled'
+                style={{
+                    outline: 'none',
+                    border: 'none',
+                    backgroundColor: 'rgba(46, 84, 99, 0.7)',
+                    opacity: '0.5',
+                    color: '#ffffff'
+                }}
+                ToggledStyle={{}}
+            />
+            <Footer />
         </>
     );
 }
