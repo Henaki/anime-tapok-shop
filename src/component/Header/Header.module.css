@@ -60,7 +60,7 @@ body {
 .search_button_label_costil {
     cursor: pointer;
     margin-left: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 30px;
 }
 .search_button_label:hover {
     cursor: pointer;
@@ -173,10 +173,11 @@ body {
 .input_nickname__text {
     color: white;
     font-weight: bold;
-    font-size: 1.3em;
-    
+    font-size: 1.5em;
 }
-
+.input_nickname {
+    margin-top: 20px;
+}
 .bok_menu_signup {
     transition: 1s;
     width: 330px;

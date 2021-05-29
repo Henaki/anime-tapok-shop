@@ -1,17 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import style from './MainPage.module.css';
 import SimpleSlider from '../Slider/Slider';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import state from '../../state';
+import axios from 'axios'
 
 const MainPage = () => {
+    let [idItem, setIdItem] = useState(0);
+    const [appStateItems, setAppStateItems] = useState([])
+    const [appStateItemsSlag, setAppStateItemsSlag] = useState({})
+    const [appStateItemsSize, setAppStateItemsSize] = useState([])
 
-    
     useEffect(() => {
         Aos.init({ duration: 400 })
     }, []);
+
+    useEffect(() => {
+        const urlAPI = 'http://at-shop/api/shop';
+        axios.get(urlAPI).then((data) => {
+            console.log(data.data.data.content);
+            setAppStateItems(data.data.data.content)
+        })
+    }, [])
+
+
     return (
         <section className={style.background}>
             <div className={style.main_content_container}>
@@ -19,15 +33,21 @@ const MainPage = () => {
                     <SimpleSlider />
                 </div>
                 <div className={style.main_catalog}>
-                    {state.items_main.map((item) => {
+                    {appStateItems.slice(0, 5).map((item) => {
                         return (
                             <div data-aos="fade-up" className={style.main_catalog__tovar}>
-                                <img src={item.url} width="200px" height="100px" />
-                                <h3>{item.title}</h3>
-                                <p>{item.price}</p>
-                                <Link to="/item">
-                                    <input type="submit" value="Купить" className={style.button_from_buy} />
-                                </Link>
+                                <img src={item.photo} width="200px" height="100px" />
+                                <h3>{item.name}</h3>
+                                <p>{item.price}₽</p>
+                                <input type="submit" value="В корзину" onClick={()=> {
+                                    setAppStateItemsSlag({
+                                        slag: item.slag,
+                                    })
+                                    axios.post('http://at-shop/api/basket', appStateItemsSlag).then((data)=>  {
+                                        console.log(data.data.data.message)
+                                    })
+                                }} className={style.button_from_buy} />
+                                <input type="submit" value="Заказать" className={style.button_from_bought}/>
                             </div>
                         );
                     })}

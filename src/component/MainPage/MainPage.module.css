@@ -28,7 +28,7 @@
     align-items: center;
 }
 .main_catalog__tovar {
-    background-color: rgb(255, 255, 255);
+    background-color: #F5F3FF;
     border: solid 1px rgba(70, 70, 70, 0.281);
     border-radius: 5px;
     width: 1200px;
@@ -42,31 +42,33 @@
 .main_catalog__tovar:hover {
     transition: 0.2s;
     cursor: pointer;
-    background-color: rgb(248, 248, 248);
+    background-color: #e6e3f3;
 }
 .main_catalog__tovar > h3 {
     font-size: 1.8em;
     width: 400px;
+    color: #7D7D7D;
 }
 .main_catalog__tovar > p {
     font-size: 2em;
-    color: green;
+    color: #3225C8;
     width: 130px;
+    margin-top: 20px;
 }
 .main_catalog__tovar > img {
     object-fit: cover;
     background-repeat: no-repeat;
-    border-radius: 15px;
+    border-radius: 20px;
 }
 .button_from_buy {
     width: 135px;
-    height: 55px;
+    height: 35px;
     background-color: rgb(255, 255, 255);
-    border: solid 1px gray;
+    border: solid 1px #EE761F;
     border-radius: 10px;
     font-size: 1.4em;
     font-weight: bold;
-    color: #615c85;
+    color: #EE761F;
     margin-right: 50px;
 }
 .button_from_buy:focus {
@@ -76,26 +78,44 @@
     cursor: pointer;
     transition: 0.3s;
     color: white;
-    background-color: #615c85;
+    background-color: #cf661b;
 }
 .button_from_catalog {
-    width: 559px;
-    height: 60px;
+    width: 400px;
+    height: 53px;
     margin-top: 40px;
     background-color: rgb(255, 255, 255);
-    border: solid 1px gray;
+    border: solid 1px #A51DA8;
     border-radius: 10px;
-    font-size: 1.4em;
-    font-weight: bold;
-    color: #615c85;
+    font-weight: 200;
+    font-size: 36px;
+    color: #000000;
     margin-bottom: 50px;
-}
-.button_from_catalog:focus {
-    outline: none;
+    line-height: 8px;
 }
 .button_from_catalog:hover {
     cursor: pointer;
     transition: 0.3s;
+    background-color: #eeeeee;
+}
+.button_from_bought {
+    width: 135px;
+    height: 35px;
+    background-color: rgb(255, 255, 255);
+    border: solid 1px#26B934;
+    border-radius: 10px;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #26B934;
+    margin-right: 30px;
+    margin-left: -50px;
+}
+.button_from_bought:focus {
+    outline: none;
+}
+.button_from_bought:hover {
+    cursor: pointer;
+    transition: 0.3s;
     color: white;
-    background-color: #615c85;
+    background-color: #1b8f27;
 }

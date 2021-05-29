@@ -1,0 +1,107 @@
+.userpage_border {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.title_userpage {
+    font-size: 48px;
+}
+.navlink_menu_bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 327px;
+    height: 207px;
+    border: solid 1px #966191;
+    border-radius: 10px;
+}
+.navlink_menu_bar > p {
+    width: 327px;
+    font-size: 36px;
+    line-height: 42px;
+    margin-left: 80px;
+}
+.navlink_menu_bar > .navlink_active > p {
+    width: 327px;
+    font-size: 36px;
+    line-height: 42px;
+    margin-left: 35px;
+}
+.navlink_active {
+    border-left: solid 4px #D04FE6;
+    width: 327px;
+    height: 42px;
+}
+.userpage_content {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.main_userpage_form {
+    width: 970px;
+    height: 970px;
+    border: solid 1px black;
+    margin-bottom: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.input_nickname_form_user {
+    width: 272px;
+    border: none;
+    border-bottom: solid 1px #D04FE6;
+    font-size: 24px;
+    margin-left: 100px;
+}
+.input_nickname_form_user:focus {
+    outline: none;
+}
+.avatar__nickname {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+.input_inf_in_filed {
+    width: 275px;
+    height: 45px;
+    border-bottom: solid 1px #D04FE6;
+}
+.edit_input_inf {
+    display: flex;
+    width: 600px;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.input_inf_in_filed > p {
+    font-size: 24px;
+}
+.input_inf_in_field__style {
+    border: none;
+    font-size: 24px;
+    width: 200px;
+    margin-left: 15px;
+}
+.input_inf_in_field__style:focus {
+    outline: none;
+}
+.inform_on_user { 
+    display: flex;
+    flex-direction: column;
+    height: 670px;
+    justify-content: space-between;
+}
+.button_to_save__style {
+    width: 461px;
+    height: 53px;
+    border: 1px solid #A51DA8;
+    box-sizing: border-box;
+    border-radius: 9px;
+    background-color: white;
+    font-size: 36px;
+    line-height: 6px;
+    margin-bottom: 10px;
+}

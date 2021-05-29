@@ -11,13 +11,18 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import ScrollUpButton from "react-scroll-up-button";
 import AllProjects from '../PaginationProb/PaginationProb'
+import UserPage  from '../UserPage/UserPage';
+
 
 
 const Routing = () => {
-    const [userName, setUserName] = useState('');
+    const [userName, setUserName] = useState('Гость');
     console.log("=========================");
     console.log(userName);
     console.log("=========================");
+
+   
+
     return (
         <>
             <Header setUser={setUserName} user={userName} />
@@ -30,10 +35,8 @@ const Routing = () => {
                 <Route path="/search" >
                     <SearchInput />
                 </Route>
+                <Route path="/user" component={UserPage}/>
                 <Route component={NotFound} />
-
-
-
             </Switch>
             <ScrollUpButton
                 StopPosition={0}

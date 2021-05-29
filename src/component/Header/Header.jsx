@@ -7,11 +7,10 @@ import { Grid } from '@material-ui/core';
 import state from '../../state';
 import Form from './FormLoginDa/Costilform'
 import axios from 'axios';
-
+import { message } from 'antd';
+import 'antd/dist/antd.css';
 
 const Header = ({ setUser, user }) => {
-
-
 
     let [chb1, setChb1] = useState(false);
     let [chb2, setChb2] = useState(false)
@@ -89,11 +88,12 @@ const Header = ({ setUser, user }) => {
 
 
 
+
     const { register, handleSubmit } = useForm();
     const onSubmit = (data) => {
         const urlAPI = "http://at-shop/api/signup";
         axios.post(urlAPI, data).then((data) => {
-            console.log(data.data.body.message)
+            message.info(data.data.body.message);
         });
     }
     return (
@@ -188,7 +188,9 @@ const Header = ({ setUser, user }) => {
                             </div>
                         </div>
                         <div className={style.input_nickname}>
-                            <p className={style.input_nickname__text}>{}</p>
+                            <Link to="/user">
+                                <p className={style.input_nickname__text}>{user}</p>
+                            </Link>
                         </div>
                     </div>
                 </div>

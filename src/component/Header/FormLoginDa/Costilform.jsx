@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useForm } from "react-hook-form";
 import style from './Costilform.module.css'
 import axios from 'axios';
+import { message } from 'antd';
+import 'antd/dist/antd.css';
 
 const Costilform = ({setUser, user}) => {
     const [userName, setUserName] = useState('');
@@ -9,10 +11,8 @@ const Costilform = ({setUser, user}) => {
     const onSubmit = (data) => {
         const urlAPI = "http://at-shop/api/login";
         axios.post(urlAPI, data).then((data) => {
-            console.log(data.data.body.message)
-            console.log(data)
+            message.info(data.data.body.message);
             setUser(user = data.data.body.user)
-            console.log(userName)
         });
         
     };
