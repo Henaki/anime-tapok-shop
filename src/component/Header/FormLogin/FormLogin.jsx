@@ -29,7 +29,7 @@ const FormLogin = ({ setUser, user }) => {
         <>
             <p className={style.button_login_btn} onClick={showDrawer}>Войти</p>
             <Drawer
-                width="300px"
+                width="320px"
                 title="Войти"
                 placement="right"
                 closable={true}

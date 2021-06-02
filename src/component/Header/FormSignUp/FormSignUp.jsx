@@ -26,7 +26,7 @@ const FormSignUp = ({ setUser, user }) => {
         <>
             <p className={style.button_signup_btn} onClick={showDrawer}>Регистрация</p>
             <Drawer
-                width="300px"
+                width="320px"
                 title="Регистрация"
                 placement="right"
                 closable={true}

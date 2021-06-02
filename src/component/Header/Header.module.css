@@ -120,13 +120,14 @@ body {
     cursor: pointer;
     z-index: 200;
     margin-top: 25px;
-    margin-left: 20px;
     align-self: flex-start;
 }
 .style_bok_menu_img_costil { 
+    width: 50px;
+    height: 50px;
     opacity: 0;
     position: absolute;
-    left: 322px;
+    left: 302px;
     top: 25px;
 }
 .style_bok_menu:hover > .style_bok_menu_img {
