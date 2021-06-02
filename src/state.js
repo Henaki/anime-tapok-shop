@@ -5,61 +5,71 @@ let search = {
             id: 0,
             url: "./photos/trinket_ngnl.jpg",
             title: "Значок Сора NGNL",
-            price: "60₽"
+            price: 60,
+            count: 1
         },
         {
             id: 1,
             url: "./photos/DeathNote.jpg",
             title: "Тетрадь death",
-            price: "450₽"
+            price: 450,
+            count: 1
         },
         {
             id: 2,
             url: "./photos/gold_key_ft.jpg",
             title: "Ключ Люси Хвост феи",
-            price: "250₽"
+            price: 250,
+            count: 1
         },
         {
             id: 3,
             url: "./photos/Rezero_cup.jpg",
             title: "Кружка RE:Zero Рэм",
-            price: "300₽"
+            price: 300,
+            count: 1
         },
         {
             id: 4,
             url: "./photos/shirt_girl_for_hour.jpg",
             title: "Футболка Девушка на час",
-            price: "1500₽"
+            price: 1500,
+            count: 1
         },
         {
             id: 5,
             url: "./photos/shirt_girl_for_hour.jpg",
             title: "Футболка Девушка на час",
-            price: "1500₽"
+            price: 1500,
+            count: 1
         },
         {
             id: 6,
             url: "./photos/shirt_girl_for_hour.jpg",
             title: "Футболка Девушка на час",
-            price: "1500₽"
+            price: 1500,
+            count: 1
         },
         {
             id: 7,
             url: "./photos/shirt_girl_for_hour.jpg",
             title: "Футболка Девушка на час",
-            price: "1500₽"
+            price: 1500,
+            count: 1
         },
         {
             id: 8,
             url: "./photos/shirt_girl_for_hour.jpg",
             title: "Футболка Девушка на час",
-            price: "1500₽"
+            price: 1500,
+            count: 1
         },
         {
             id: 9,
             url: "./photos/shirt_girl_for_hour.jpg",
             title: "Футболка Девушка на час",
-            price: "1500₽"
+            price: 1500,
+            count: 1
         }
     ],
     items_main: [

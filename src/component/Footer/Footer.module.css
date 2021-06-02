@@ -3,6 +3,10 @@
     padding: 0;
 }
 footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
     height: 120px;
     border: solid 1px black;
     font-size: 1.3em;
@@ -11,10 +15,9 @@ footer {
 }
 .footer_list {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    margin-left: 250px;
+    width: 1300px;
 }
 ul {
     list-style: none;
@@ -36,7 +39,6 @@ a {
     border: solid 1px black;
     border-radius: 5px;
     color: #615c85;
-    margin-right: 250px;
 }
 .button_from_otzivi:focus {
     outline: none;

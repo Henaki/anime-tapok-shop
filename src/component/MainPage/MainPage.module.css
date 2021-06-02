@@ -9,16 +9,16 @@
     width: 100%;
     height: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
 }
 .main_slider {
     display: flex;
-    width: 1370px;
+    width: 1300px;
     height: 450px;
     margin-top: 70px;
     align-self: center;
-    margin-left: 100px;
 }
 .main_catalog {
     display: flex;
@@ -31,7 +31,7 @@
     background-color: #F5F3FF;
     border: solid 1px rgba(70, 70, 70, 0.281);
     border-radius: 5px;
-    width: 1200px;
+    width: 1300px;
     min-height: 150px;
     margin-top: 60px;
     display: flex;

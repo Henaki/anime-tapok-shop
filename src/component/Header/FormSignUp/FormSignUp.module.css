@@ -1,0 +1,91 @@
+.input_in_signup {
+    border: solid 1px black;
+    width: 250px;
+    height: 25px;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.input_in_signup:focus {
+    outline: none;
+}
+.form_style_signup > .form_signup_main > div > label {
+    font-size: 18px;
+}
+.btn_from_signup_form {
+    width: 170px;
+    height: 45px;
+    align-self: flex-end;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.6);
+}
+.btn_from_signup_form:focus {
+    outline: none;
+}
+.btn_from_signup_form:hover {
+    transition: 0.3s;
+    background-color: #615c85;
+    color: white;
+    cursor: pointer;
+}
+.form_style_signup {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.form_signup_main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 370px;
+}
+.button_signup_btn {
+    margin-bottom: 0;
+    outline: none;
+    font-size: 1.5em;
+    color: white;
+    background-color: #615c85;
+    border: none;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+.button_signup_btn:hover {
+    transition: 0.4s;
+    color: black;
+}
+.links_to_kuda_to {
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: solid 1px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.links_to_kuda_to > p:hover {
+    cursor: pointer;
+    transition: 0.2s;
+    color: rgba(0, 0, 0, 0.6);
+}
+.button_signup_btn {
+    margin-bottom: 0;
+    outline: none;
+    font-size: 1.5em;
+    color: white;
+    background-color: #615c85;
+    border: none;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+.button_signup_btn:hover {
+    transition: 0.4s;
+    color: black;
+}

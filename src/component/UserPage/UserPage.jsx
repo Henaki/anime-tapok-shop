@@ -14,9 +14,15 @@ const UserPage = () => {
                 <div className={style.userpage_content}>
                     <div className={style.navlink_menu_bar}>
                         <div className={style.navlink_active}>
-                            <p>Настройки</p>
+                            <Link to="/user" className={style.navlink_active__style}>
+                                <p>Настройки</p>
+                            </Link>
                         </div>
-                        <p>Корзина</p>
+                        <div className={style.navlink_non_active}>
+                            <Link to="/basket" className={style.navlink_active__style}>
+                                <p>Корзина</p>
+                            </Link>
+                        </div>
                     </div>
                     <div className={style.main_userpage_form}>
                         <div className={style.avatar__nickname}>
@@ -24,7 +30,7 @@ const UserPage = () => {
                             <input type="text" name="nickname" placeholder="Никнейм" className={style.input_nickname_form_user} />
                         </div>
                         <div className={style.inform_on_user}>
-            
+
                             <div className={style.edit_input_inf}>
                                 <div className={style.input_inf_in_filed}>
                                     <p>Фамилия</p>
@@ -108,7 +114,7 @@ const UserPage = () => {
                             </div>
                         </div>
                         <div className={style.button_to_save}>
-                            <input type="submit" name="saveInf" value="Сохранить изменения" className={style.button_to_save__style}/>
+                            <input type="submit" name="saveInf" value="Сохранить изменения" className={style.button_to_save__style} />
                         </div>
                     </div>
                 </div>

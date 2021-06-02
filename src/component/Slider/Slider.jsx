@@ -26,7 +26,7 @@ export default class SimpleSlider extends Component {
           {state.photos.map((slide) => {
             return (
               <div className={style.slider_main}>
-              <img src={slide.url} className={style.photo_slider} width="1200px"/>
+              <img src={slide.url} className={style.photo_slider} width="1300px"/>
               </div>
             );
           }

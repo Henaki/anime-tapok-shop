@@ -12,6 +12,7 @@ import Footer from '../Footer/Footer';
 import ScrollUpButton from "react-scroll-up-button";
 import AllProjects from '../PaginationProb/PaginationProb'
 import UserPage  from '../UserPage/UserPage';
+import UserBasket from '../UserBasket/UserBasket';
 
 
 
@@ -36,6 +37,7 @@ const Routing = () => {
                     <SearchInput />
                 </Route>
                 <Route path="/user" component={UserPage}/>
+                <Route path="/basket" component={UserBasket}/>
                 <Route component={NotFound} />
             </Switch>
             <ScrollUpButton

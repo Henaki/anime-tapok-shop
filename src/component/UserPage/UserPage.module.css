@@ -12,42 +12,55 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 327px;
+    width: 307px;
     height: 207px;
     border: solid 1px #966191;
     border-radius: 10px;
 }
-.navlink_menu_bar > p {
-    width: 327px;
-    font-size: 36px;
-    line-height: 42px;
-    margin-left: 80px;
-}
-.navlink_menu_bar > .navlink_active > p {
-    width: 327px;
+.navlink_menu_bar > .navlink_active > .navlink_active__style > p {
+    width: 180px;
     font-size: 36px;
     line-height: 42px;
     margin-left: 35px;
+    color: black;
+}
+.navlink_active__style > p {
+    color: black;
+    font-size: 36px;
+    margin-right: 110px;
+    height: 50px;
+    line-height: 42px;
+}
+.navlink_active__style > p:hover { 
+    transition: 0.1s;
+    border-bottom: solid 2px #D04FE6;
+}
+.navlink_active > .navlink_active__style > p {
+    border-bottom: solid 2px #D04FE6;
+}
+.navlink_active > .navlink_active__style > p:hover {
+    border-bottom: solid 4px #D04FE6;
 }
 .navlink_active {
-    border-left: solid 4px #D04FE6;
-    width: 327px;
+    width: 307px;
     height: 42px;
 }
 .userpage_content {
     display: flex;
-    width: 100%;
-    justify-content: space-evenly;
+    width: 1200px;
+    justify-content: space-between;
 }
 .main_userpage_form {
-    width: 970px;
-    height: 970px;
-    border: solid 1px black;
+    width: 850px;
+    height: 1070px;
     margin-bottom: 150px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid #868181;
+    box-sizing: border-box;
+    border-radius: 10px;
 }
 .input_nickname_form_user {
     width: 272px;
@@ -93,6 +106,7 @@
     flex-direction: column;
     height: 670px;
     justify-content: space-between;
+    margin-top: 50px;
 }
 .button_to_save__style {
     width: 461px;

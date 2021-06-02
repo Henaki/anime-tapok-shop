@@ -1,0 +1,242 @@
+.userbasket_border {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title_userbasket {
+    font-size: 48px;
+}
+
+.navlink_menu_bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 307px;
+    height: 207px;
+    border: solid 1px #966191;
+    border-radius: 10px;
+}
+
+.navlink_menu_bar>.navlink_active>.navlink_active__style>p {
+    width: 180px;
+    font-size: 36px;
+    line-height: 42px;
+    margin-left: 25px;
+    color: black;
+}
+
+.navlink_active__style>p {
+    color: black;
+    font-size: 36px;
+    margin-right: 100px;
+    height: 50px;
+    line-height: 42px;
+}
+
+.navlink_non_active>.navlink_active__style>p {
+    border-bottom: solid 2px #D04FE6;
+}
+
+.navlink_non_active>.navlink_active__style>p:hover {
+    border-bottom: solid 4px #D04FE6;
+}
+
+.navlink_active__style>p:hover {
+    transition: 0.1s;
+    border-bottom: solid 2px #D04FE6;
+}
+
+.navlink_active {
+    width: 307px;
+    height: 42px;
+}
+
+.navlink_non_active {
+    border: none;
+}
+
+.field_btn {
+    width: 1350px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.button_from_delete_item {
+    width: 224px;
+    height: 60px;
+    background-color: white;
+    border: 2px solid #D72B2B;
+    font-size: 36px;
+    line-height: 42px;
+    color: #D72B2B;
+    cursor: pointer;
+}
+
+.field_nav_and_btn {
+    display: flex;
+    width: 1200px;
+    justify-content: space-between;
+}
+
+.row_basket__tovars {
+    margin-bottom: 50px;
+}
+
+.basket__tovars {
+    background-color: #F5F3FF;
+    border-radius: 10px;
+    width: 950px;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.basket__tovars:hover {
+    transition: 0.2s;
+    cursor: pointer;
+    background-color: #e6e3f3;
+}
+
+.basket__tovars>h3 {
+    font-size: 1.8em;
+    width: 400px;
+    color: #6D5D75;
+}
+
+.basket__tovars>p {
+    font-size: 2em;
+    color: #6D5D75;
+    width: 130px;
+    margin-top: 20px;
+}
+
+.basket__tovars>img {
+    object-fit: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+}
+
+.basket__tovars:hover>.count_tovara {
+    transition: 0.2s;
+    cursor: pointer;
+    background-color: #e6e3f3;
+}
+
+.basket__tovars:hover>.count_tovara>.button_reg_count {
+    transition: 0.2s;
+    cursor: pointer;
+    background-color: #e6e3f3;
+}
+
+.count_tovara {
+    width: 120px;
+    height: 46px;
+    border: 1px solid #919090;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #F5F3FF;
+}
+
+.button_reg_count {
+    border: none;
+    border-radius: 10px;
+    background-color: #F5F3FF;
+    height: 44px;
+    width: 40px;
+    font-weight: bold;
+}
+
+.button_reg_count:hover {
+    transition: 0.2s;
+    cursor: pointer;
+    background-color: #150f35;
+}
+
+.count__text {
+    font-size: 28px;
+    line-height: 42px;
+    color: #776969;
+}
+
+.row_basket__tovars {
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkbox_basket {
+    display: none;
+}
+
+.checkbox_basket__label {
+    content: "";
+    width: 37px;
+    height: 37px;
+    background: #FFFFFF;
+    border: 1px solid #757171;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.checkbox_basket__label>img {
+    border-radius: 20px;
+    display: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.checkbox_basket:checked~.checkbox_basket__label>img {
+    display: block;
+}
+
+.items_basket_and_nav {
+    justify-content: space-between;
+    display: flex;
+    width: 1350px;
+    margin-top: 50px;
+}
+
+.field_to_zakaz_and_price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+.window_price_and_btn {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.btn_for_zakaz {
+    width: 337px;
+    height: 60px;
+    background-color: white;
+    border: 2px solid #139630;
+    box-sizing: border-box;
+    font-size: 48px;
+    line-height: 0px;
+    color: #139630;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.all_price__text {
+    color: #776969;
+    font-size: 28px;
+}
