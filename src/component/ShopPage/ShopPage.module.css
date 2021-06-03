@@ -133,3 +133,35 @@
 .checkbox_filter_none:checked~.checkbox_btn__filter {
     background-color: #615c85;
 }
+.button_from_bought {
+    width: 135px;
+    height: 35px;
+    background-color: rgb(255, 255, 255);
+    border: solid 1px#26B934;
+    border-radius: 10px;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #26B934;
+    margin-right: 30px;
+    margin-left: -50px;
+}
+.button_from_buy {
+    width: 135px;
+    height: 35px;
+    background-color: rgb(255, 255, 255);
+    border: solid 1px #EE761F;
+    border-radius: 10px;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #EE761F;
+    margin-right: 50px;
+}
+.button_from_buy:focus {
+    outline: none;
+}
+.button_from_buy:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+    background-color: #cf661b;
+}

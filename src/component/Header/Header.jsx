@@ -10,6 +10,7 @@ import FormSignUp from './FormSignUp/FormSignUp'
 import axios from 'axios';
 import { message, Drawer } from 'antd';
 import 'antd/dist/antd.css';
+import Cookies from 'js-cookie';
 
 const Header = ({ setUser, user }) => {
 
@@ -127,7 +128,7 @@ const Header = ({ setUser, user }) => {
                         </Drawer>
                     </div>
                     <Link to="/">
-                                <a><img src="logo.jpg" /></a>
+                                <a><img src="logo.png" /></a>
                             </Link>
                     <div className={style.search_window_in_header}>
                         <input type="text" onInput={(e) => dispatch({ type: 'ON_INPUT', payload: e.target.value })} onFocus={(e) => dispatch({ type: 'ON_INPUT', payload: " " })} onBlur={(e) => dispatch({ type: 'ON_INPUT', payload: "" })} className={style.search_input} value={state} name="search" placeholder="search for...
@@ -142,7 +143,7 @@ const Header = ({ setUser, user }) => {
                         <FormLogin />
                         <div className={style.input_nickname}>
                             <Link to="/user">
-                                <p className={style.input_nickname__text}>{user}</p>
+                                <p className={style.input_nickname__text}>{Cookies.get('login')}</p>
                             </Link>
                         </div>
                     </div>

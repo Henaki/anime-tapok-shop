@@ -11,7 +11,7 @@ const Footer = () => {
 
                 <ul>
                     <div className={style.logo_and_copyright}>
-                        <li>Лого</li>
+                        <li><img src="logo.png" width="170px" height="50px" /></li>
                         <li>Copyright</li>
                     </div>
                 </ul>

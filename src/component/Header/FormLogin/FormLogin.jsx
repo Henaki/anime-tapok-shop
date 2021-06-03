@@ -4,11 +4,14 @@ import style from './FormLogin.module.css'
 import axios from 'axios';
 import { message, Drawer } from 'antd';
 import 'antd/dist/antd.css';
+import Cookies from 'js-cookie'
 
-const FormLogin = ({ setUser, user }) => {
+const FormLogin = () => {
+    let [user, setUser] = useState()
     const [visible, setVisible] = useState(false);
     const showDrawer = () => {
         setVisible(true);
+
     };
     const onClose = () => {
         setVisible(false);
@@ -19,8 +22,13 @@ const FormLogin = ({ setUser, user }) => {
     const onSubmit = (data) => {
         const urlAPI = "http://at-shop/api/login";
         axios.post(urlAPI, data).then((data) => {
+            console.log(data);
             message.info(data.data.body.message);
-            setUser(user = data.data.body.user)
+            setUser(user = data.data.body.token.plainTextToken)
+            Cookies.set('jwt_token_debil', user)
+            Cookies.set('login', data.data.body.user)
+            console.log(Cookies.get('jwt_token_debil'));
+            console.log(Cookies.get('login'));
         });
 
     };

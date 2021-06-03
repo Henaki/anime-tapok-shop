@@ -5,9 +5,8 @@ import state from '../../state'
 
 const UserBasket = () => {
     const [stateBasket, setStateBasket] = useState(state.items_shop);
-    let [countNumb, setCountNumb] = useState(0);
+    let [countNumb, setCountNumb] = useState(1);
     let price = 0;
-    console.log(price);
     return (
         <>
             <div className={style.userbasket_border}>
@@ -34,7 +33,7 @@ const UserBasket = () => {
                     <div className={style.items_basket}>
                         {
                             stateBasket.map((item) => {
-                                price += item.price
+                                price += item.price * item.count
                                 return (
                                     <div className={style.row_basket__tovars}>
                                         <input type="checkbox" className={style.checkbox_basket} id={item.id} />
@@ -43,11 +42,11 @@ const UserBasket = () => {
                                             <img src={item.url} width="250px" height="100px" />
                                             <h3>{item.title}</h3>
                                             <div className={style.count_tovara}>
-                                                <input type="submit" className={style.button_reg_count} value="—" onClick={(e) => { if (item.count > 1) { item.count--; setCountNumb(countNumb = item.count); console.log(item.count); } }} />
+                                                <input type="submit" className={style.button_reg_count} value="—" onClick={(e) => { if (item.count > 1) { item.count--; setCountNumb(countNumb = item.count); } }} />
                                                 <p className={style.count__text}>{item.count}</p>
                                                 <input type="submit" className={style.button_reg_count} value="➕" onClick={(e) => { item.count++; setCountNumb(countNumb = item.count); }} />
                                             </div>
-                                            <p>{item.price}₽</p>
+                                            <p onClick={() => { console.log(countNumb) }}>{item.price}₽</p>
                                         </div>
                                     </div>
                                 );

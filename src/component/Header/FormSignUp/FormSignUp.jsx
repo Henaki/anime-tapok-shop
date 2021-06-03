@@ -16,12 +16,12 @@ const FormSignUp = ({ setUser, user }) => {
 
     const { register, handleSubmit } = useForm();
     const onSubmit = (data) => {
-        const urlAPI = "http://at-shop/api/signup";
-        axios.post(urlAPI, data).then((data) => {
-            message.info(data.data.body.message);
+        let me_die = data;
+        console.log(me_die);
+        axios.post('http://at-shop/api/signup', me_die).then((data) => {
+            console.log(data);
         });
     }
-
     return (
         <>
             <p className={style.button_signup_btn} onClick={showDrawer}>Регистрация</p>
@@ -58,7 +58,6 @@ const FormSignUp = ({ setUser, user }) => {
                         <p className={style.user_sogl}>Пользовательское соглашение</p>
                     </div>
                 </form></Drawer>
-
         </>
     )
 }

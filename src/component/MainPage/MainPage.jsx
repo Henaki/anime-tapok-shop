@@ -6,6 +6,7 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 import state from '../../state';
 import axios from 'axios'
+import Cookies from 'js-cookie';
 
 const MainPage = () => {
     let [idItem, setIdItem] = useState(0);
@@ -42,8 +43,16 @@ const MainPage = () => {
                                 <input type="submit" value="В корзину" onClick={()=> {
                                     setAppStateItemsSlag({
                                         slag: item.slag,
+                                        count: 1,
                                     })
-                                    axios.post('http://at-shop/api/basket', appStateItemsSlag).then((data)=>  {
+                                    axios.post('http://at-shop/api/basket', appStateItemsSlag, {
+                                        headers: {
+                                            'Authorization': "Bearer-" + Cookies.get('jwt_token_debil'),
+                                            'X-Requested-With': 'XMLHttpRequest'
+                                            
+                                        }
+                                    
+                                    }).then((data)=>  {
                                         console.log(data.data.data.message)
                                     })
                                 }} className={style.button_from_buy} />
