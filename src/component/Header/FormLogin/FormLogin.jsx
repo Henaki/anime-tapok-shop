@@ -23,7 +23,7 @@ const FormLogin = () => {
         const urlAPI = "http://at-shop/api/login";
         axios.post(urlAPI, data).then((data) => {
             console.log(data);
-            message.info(data.data.body.message);
+            message.success("Вы авторизовались");
             setUser(user = data.data.body.token.plainTextToken)
             Cookies.set('jwt_token_debil', user)
             Cookies.set('login', data.data.body.user)

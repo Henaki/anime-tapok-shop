@@ -63,17 +63,6 @@ const Header = ({ setUser, user }) => {
         //     }
         // }
     }
-
-
-
-
-    const { register, handleSubmit } = useForm();
-    const onSubmit = (data) => {
-        const urlAPI = "http://at-shop/api/signup";
-        axios.post(urlAPI, data).then((data) => {
-            message.info(data.data.body.message);
-        });
-    }
     return (
 
         <section>

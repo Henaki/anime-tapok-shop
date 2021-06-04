@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -131,7 +132,7 @@ body {
     top: 25px;
 }
 .style_bok_menu:hover > .style_bok_menu_img {
-    transition: 0.5s;
+    transition: 0.2s;
     opacity: 0;
 }
 .style_bok_menu:hover > .style_bok_menu_img_costil {

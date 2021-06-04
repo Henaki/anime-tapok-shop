@@ -105,10 +105,6 @@ let search = {
             url: "./photos/art_slider_1.jpg"
         },
         {
-            id: 1,
-            url: "./photos/art_slider_2.jpg"
-        },
-        {
             id: 2,
             url: "./photos/art_slider_3.jpg"
         }

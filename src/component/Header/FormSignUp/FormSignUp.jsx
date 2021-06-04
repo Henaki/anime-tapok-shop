@@ -19,7 +19,9 @@ const FormSignUp = ({ setUser, user }) => {
         let me_die = data;
         console.log(me_die);
         axios.post('http://at-shop/api/signup', me_die).then((data) => {
-            console.log(data);
+            message.success("Регистрация прошла успешно");
+        }).catch((error)=> {
+            message.error("Что-то пошло не так")
         });
     }
     return (
