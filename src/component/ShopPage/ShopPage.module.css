@@ -116,7 +116,7 @@
     padding-right: 8px;
 }
 .checkbox_filter_none {
-    
+    display: none;
 }
 .checkbox_btn__filter:focus {
     outline: none;

@@ -10,25 +10,17 @@ import state from './../../state';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import ScrollUpButton from "react-scroll-up-button";
-import AllProjects from '../PaginationProb/PaginationProb'
 import UserPage  from '../UserPage/UserPage';
 import UserBasket from '../UserBasket/UserBasket';
+import PaymentsItem from '../PaymentItem/PaymentsItem'
 
 
 
 const Routing = () => {
-    const [userName, setUserName] = useState('Гость');
-    console.log("=========================");
-    console.log(userName);
-    console.log("=========================");
-
-   
-
     return (
         <>
-            <Header setUser={setUserName} user={userName} />
+            <Header/>
             <Switch>
-                <Route path="/pagination" component={AllProjects} />
                 <Route exact path="/" component={MainPage} />
                 <Route path="/reviews" component={Reviwes} />
                 <Route path="/shop" component={ShopPage} />
@@ -38,6 +30,7 @@ const Routing = () => {
                 </Route>
                 <Route path="/user" component={UserPage}/>
                 <Route path="/basket" component={UserBasket}/>
+                <Route path="/pay" component={PaymentsItem}/>
                 <Route component={NotFound} />
             </Switch>
             <ScrollUpButton

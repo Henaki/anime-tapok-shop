@@ -3,7 +3,6 @@ import style from './Header.module.css';
 import { Link, useHistory } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { cyeta } from './../../state'
-import { Grid } from '@material-ui/core';
 import state from '../../state';
 import FormLogin from './FormLogin/FormLogin'
 import FormSignUp from './FormSignUp/FormSignUp'

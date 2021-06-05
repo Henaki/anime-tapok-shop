@@ -4,10 +4,12 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin-top: 80px;
 }
 .inform_to_item_page {
   width: 1300px;
   display: flex;
+  justify-content: space-between;
 }
 .style_img_item {
   width: 600px;
@@ -79,7 +81,7 @@
   color: #9e72e4;
 }
 .sizes_to_item > label:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  color: #6200ff;
 }
 
 .inf_item_title {
@@ -99,24 +101,11 @@
     width: 1300px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 100px;
 }
 .field_bottom_bottom_item {
     width: 629px;
     border-bottom: 0.8px solid #D04FE6;
 }
-.basket__tovars:hover>.count_tovara {
-    transition: 0.2s;
-    cursor: pointer;
-    background-color: #e6e3f3;
-}
-
-.basket__tovars:hover>.count_tovara>.button_reg_count {
-    transition: 0.2s;
-    cursor: pointer;
-    background-color: #e6e3f3;
-}
-
 .count_tovara {
     width: 120px;
     height: 46px;
@@ -140,7 +129,7 @@
 .button_reg_count:hover {
     transition: 0.2s;
     cursor: pointer;
-    background-color: #150f35;
+    background-color: #e7e5f1;
 }
 
 .count__text {

@@ -12,7 +12,7 @@ const ItemPage = () => {
         <div className={style.inform_to_item_page}>
           <div className={style.img_and_inf_item}>
             <img
-              src="./photos/death_note.jpg"
+              src=""
               alt=""
               className={style.style_img_item}
             />
@@ -50,6 +50,7 @@ const ItemPage = () => {
               </div>
             </div>
           </div>
+          <div className=""></div>
         </div>
         <div className={style.field_bottom_item}>
         <div className={style.field_bottom_bottom_item}></div>

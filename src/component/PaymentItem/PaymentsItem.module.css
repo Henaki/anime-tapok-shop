@@ -1,0 +1,36 @@
+.paymentsitem_border {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.title_payments_item > p {
+    text-align: center;
+    font-size: 64px;
+}
+.title_payments_item {
+    width: 500px;
+    height: 100px;
+    border-bottom: 1px solid #D04FE6;
+}
+.radio_btn {
+    display: none;
+}
+.radio_btn_style {
+    content: "\a";
+    width: 35px;
+    height: 35px;
+    border:solid 1px #AB87F9;
+    border-radius: 25px;
+}
+.radio_select_payment {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+.radio_btn:checked~.radio_btn_style {
+    background-color: #AB87F9;
+}
+.border_select_radio {
+    display: flex;
+}

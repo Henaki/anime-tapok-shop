@@ -14,18 +14,21 @@ const MainPage = () => {
   const [appStateItems, setAppStateItems] = useState([]);
   const [appStateItemsSlag, setAppStateItemsSlag] = useState({});
   const [appStateItemsSize, setAppStateItemsSize] = useState([]);
+  const let_me_die = Cookies.get("jwt_token_debil");
 
   useEffect(() => {
     Aos.init({ duration: 400 });
   }, []);
 
   useEffect(() => {
-    const urlAPI = "http://at-shop/api/shop";
+    const urlAPI = "http://at-shop/api/randomshop";
     axios.get(urlAPI).then((data) => {
       console.log(data.data.data.content);
       setAppStateItems(data.data.data.content);
+      console.log(let_me_die);
     });
   }, []);
+
 
   return (
     <section className={style.background}>
@@ -36,39 +39,43 @@ const MainPage = () => {
         <div className={style.main_catalog}>
           {appStateItems.slice(0, 5).map((item) => {
             return (
-              <Link data-aos="fade-up" to={me_die + item.slag} className={style.main_catalog__tovar}>
-               
-                  <img src={item.photo} width="200px" height="100px" />
-                  <h3>{item.name}</h3>
-                  <p>{item.price}₽</p>
-                  <input
-                    type="submit"
-                    value="В корзину"
-                    onClick={() => {
-                      setAppStateItemsSlag({
-                        slag: item.slag,
-                        count: 1,
+              <Link
+                data-aos="fade-up"
+                to={me_die + item.slag}
+                className={style.main_catalog__tovar}
+              >
+                <img src={item.photo} width="200px" height="100px" />
+                <h3>{item.name}</h3>
+                <p>{item.price}₽</p>
+                <input
+                  type="submit"
+                  value="В корзину"
+                  onClick={() => {
+                    const data = {
+                      slag: item.slag,
+                      count: 1,
+                    };
+                    axios
+                      .post("http://at-shop/api/basket", data, {
+                        headers: {
+                          Authorization: "Bearer " + Cookies.get('jwt_token_debil'),
+                          "X-Requested-With": "XMLHttpRequest",
+                        },
+                      })
+                      .then((data) => {
+                        console.log(data);
+                      })
+                      .catch((error) => {
+                        console.log(error);
                       });
-                      axios
-                        .post("http://at-shop/api/basket", appStateItemsSlag, {
-                          headers: {
-                            Authorization:
-                              "Bearer-" + Cookies.get("jwt_token_debil"),
-                            "X-Requested-With": "XMLHttpRequest",
-                          },
-                        })
-                        .then((data) => {
-                          console.log(data.data.data.message);
-                        });
-                    }}
-                    className={style.button_from_buy}
-                  />
-                  <input
-                    type="submit"
-                    value="Заказать"
-                    className={style.button_from_bought}
-                  />
-                
+                  }}
+                  className={style.button_from_buy}
+                />
+                <input
+                  type="submit"
+                  value="Заказать"
+                  className={style.button_from_bought}
+                />
               </Link>
             );
           })}
