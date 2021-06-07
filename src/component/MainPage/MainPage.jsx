@@ -4,7 +4,6 @@ import SimpleSlider from "../Slider/Slider";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import state from "../../state";
 import axios from "axios";
 import Cookies from "js-cookie";
 

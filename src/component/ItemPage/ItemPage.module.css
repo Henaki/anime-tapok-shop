@@ -71,19 +71,25 @@
   display: flex;
   justify-content: space-between;
 }
-.sizes_to_item > input {
+.form_radio {
+  margin-bottom: 10px;
+}
+.form_radio input[type="radio"] {
   display: none;
 }
-.sizes_to_item > label {
-  height: 40px;
-  font-size: 36px;
-  cursor: pointer;
+.form_radio label {
   color: #9e72e4;
+  font-size: 36px;
 }
-.sizes_to_item > label:hover {
+
+.form_radio input[type="radio"]:checked + label {
   color: #6200ff;
 }
 
+.form_radio label:hover {
+  color: #8140d3;
+  cursor: pointer;
+}
 .inf_item_title {
   font-weight: 200;
   font-size: 36px;
@@ -91,68 +97,68 @@
   color: #6200ff;
 }
 .inf_item_words {
-    font-weight: 200;
-    font-size: 24px;
-    line-height: 42px;
-    color: #9E72E4;
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 42px;
+  color: #9e72e4;
 }
 .field_bottom_item {
-    height: 73px;
-    width: 1300px;
-    display: flex;
-    justify-content: space-between;
+  height: 73px;
+  width: 1300px;
+  display: flex;
+  justify-content: space-between;
 }
 .field_bottom_bottom_item {
-    width: 629px;
-    border-bottom: 0.8px solid #D04FE6;
+  width: 629px;
+  border-bottom: 0.8px solid #d04fe6;
 }
 .count_tovara {
-    width: 120px;
-    height: 46px;
-    border: 1px solid #919090;
-    box-sizing: border-box;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    background-color: #F5F3FF;
+  width: 120px;
+  height: 46px;
+  border: 1px solid #919090;
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f5f3ff;
 }
 
 .button_reg_count {
-    border: none;
-    border-radius: 10px;
-    background-color: #F5F3FF;
-    height: 44px;
-    width: 40px;
-    font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background-color: #f5f3ff;
+  height: 44px;
+  width: 40px;
+  font-weight: bold;
 }
 
 .button_reg_count:hover {
-    transition: 0.2s;
-    cursor: pointer;
-    background-color: #e7e5f1;
+  transition: 0.2s;
+  cursor: pointer;
+  background-color: #e7e5f1;
 }
 
 .count__text {
-    font-size: 28px;
-    line-height: 42px;
-    color: #776969;
+  font-size: 28px;
+  line-height: 42px;
+  color: #776969;
 }
 .button_from_buy {
-    width: 135px;
-    height: 35px;
-    background-color: rgb(255, 255, 255);
-    border: solid 1px #EE761F;
-    border-radius: 10px;
-    font-size: 1.4em;
-    font-weight: bold;
-    color: #EE761F;
+  width: 135px;
+  height: 35px;
+  background-color: rgb(255, 255, 255);
+  border: solid 1px #ee761f;
+  border-radius: 10px;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #ee761f;
 }
 .button_from_buy:focus {
-    outline: none;
+  outline: none;
 }
 .button_from_buy:hover {
-    cursor: pointer;
-    transition: 0.3s;
-    color: white;
-    background-color: #cf661b;
+  cursor: pointer;
+  transition: 0.3s;
+  color: white;
+  background-color: #cf661b;
 }

@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import style from './Slider.module.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import state from '../../state'
 
 export default class SimpleSlider extends Component {

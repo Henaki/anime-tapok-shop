@@ -2,21 +2,11 @@ import React, { useState } from 'react';
 import style from './Reviews.module.css';
 import { useForm } from "react-hook-form";
 import state from '../../state';
+import Cookies from 'js-cookie'
 
 const Reviwes = () => {
 
-    let userName = '';
-    let [userNameRole, setUserNameRole] = useState(3);
-    if (userNameRole == 0) {
-        userName = 'Гость';
-    } else {
-        state.users.map((user) => {
-            if (user.id == userNameRole)
-                return (
-                    userName = user.name
-                )
-        });
-    }
+    let userName = Cookies.get('login');
     const { register, handleSubmit } = useForm();
     const onSubmit = (data) => alert(JSON.stringify(data));
 
@@ -27,7 +17,7 @@ const Reviwes = () => {
                 <div className={style.block_input_comment}>
                     <form className={style.input_comment} onSubmit={handleSubmit(onSubmit)}>
                         <div className={style.input_comment__name}>
-                            <input ref={register} key={userNameRole} type="text" name="Name" value={userName} />
+                            <input ref={register} type="text" name="Name" value={userName} />
                         </div>
                         <div className={style.input_comment__text}>
                             <textarea ref={register} name="Review" placeholder="Введите отзыв"></textarea>
