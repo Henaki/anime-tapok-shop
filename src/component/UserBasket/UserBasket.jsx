@@ -106,13 +106,11 @@ const UserBasket = () => {
               <div className=""></div>
               <div className={style.window_price_and_btn}>
                 <p className={style.all_price__text}>Общая цена: {price} ₽</p>
-                <Link to="/pay">
                 <input
                   type="submit"
                   value="Заказать"
                   className={style.btn_for_zakaz}
                 />
-                </Link>
               </div>
             </div>
           </div>

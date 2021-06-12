@@ -10,30 +10,26 @@ import axios from "axios";
 import { message, Drawer } from "antd";
 import "antd/dist/antd.css";
 import Cookies from "js-cookie";
-import LogOut from "./Logout/LogOut";
-import { MenuOutlined } from "@ant-design/icons";
 
-const Header = () => {
-  let link = "";
-  let login_guest = Cookies.get("login");
-  let [formLogSign, setFormLogSign] = useState(
-    <>
-      <FormLogin /> <FormSignUp />
-    </>
-  );
-  if (login_guest != undefined) {
-    link = "/user";
-  }
+const Header = ({ setUser, user }) => {
   const [stateSearch, setStateSearch] = useState([]);
   let [stateSearchTitle, setStateSearchTitle] = useState("");
   const [visible, setVisible] = useState(false);
-  let userName = "";
   const showDrawer = () => {
     setVisible(true);
   };
   const onClose = () => {
     setVisible(false);
   };
+  let userName = "";
+  let [userNameRole, setUserNameRole] = useState(0);
+  if (userNameRole == 0) {
+    userName = "Гость";
+  } else {
+    state.users.map((user) => {
+      if (user.id == userNameRole) return (userName = user.name);
+    });
+  }
   let [inputSearch, setInputSearch] = useState("");
   let [checked_btn, setChecked_btn] = useState(false);
 
@@ -45,17 +41,37 @@ const Header = () => {
       setChecked_btn((checked_btn = false));
     }
   });
+  const handleSe = (e) => {
+    const apiURL = "http://at-shop/api/search/" + inputSearch;
+    axios.get(apiURL).then((data) => {
+        const govno = data.data.data.message
+        let govno3 = data.data.data.content
+        console.log(govno3);
+      Cookies.set("state_costil", govno);
+      Cookies.set("state_costil2", govno3);
+      history.push("/search");
+    });
+  };
   return (
     <section>
       <div className={style.header_main}>
         <div className={style.header_content}>
           <div className="">
             <label for="bok__menu" className={style.style_bok_menu}>
-              <svg className={style.burger_menu} viewBox="0 0 100 75" width="50" height="50">
-                <rect className={style.burger_menu_item} x="20" y="15" width="60" height="6"></rect>
-                <rect className={style.burger_menu_item} x="20" y="35" width="60" height="6"></rect>
-                <rect className={style.burger_menu_item} x="20" y="55" width="60" height="6"></rect>
-              </svg>
+              <img
+                className={style.style_bok_menu_img}
+                src="icon_filter.png"
+                alt=""
+                width="50px"
+                height="50px"
+              />
+              <img
+                className={style.style_bok_menu_img_costil}
+                src="icon_filter_costil.png"
+                alt=""
+                width="50px"
+                height="50px"
+              />
             </label>
             <input
               type="checkbox"
@@ -63,7 +79,6 @@ const Header = () => {
               className={style.bok_menu_btn}
               onClick={showDrawer}
             />
-
             <Drawer
               width="300px"
               title="Меню"
@@ -79,17 +94,7 @@ const Header = () => {
                   </Link>
                 </div>
                 <div className={style.link_point_menu}>
-                  <Link
-                    className={style.navlink_menu}
-                    to={link}
-                    onClick={() => {
-                      if (login_guest == "Гость") {
-                        message.info(
-                          "Зарегистрируйтесь, прежде чем сюда тыкать"
-                        );
-                      }
-                    }}
-                  >
+                  <Link className={style.navlink_menu} to="/user">
                     <li>Личный кабинет</li>
                   </Link>
                 </div>
@@ -125,18 +130,13 @@ const Header = () => {
             <input
               type="text"
               className={style.search_input}
-              onInput={(e) => {
-                setInputSearch(e.target.value);
-              }}
+              onInput={(e) => setInputSearch(e.target.value)}
               name="search"
               placeholder="search for...
                         "
             />
             <label
-              onClick={() => {
-                Cookies.set("item_slag", inputSearch);
-                history.push("/search");
-              }}
+              onClick={handleSe}
               className={style.search_button_label}
               for="search_button"
             >
@@ -155,20 +155,12 @@ const Header = () => {
             </label>
           </div>
           <div className={style.inputs_sign_login}>
-            {login_guest != undefined ? <LogOut /> : formLogSign}
+            <FormSignUp />
+            <FormLogin />
             <div className={style.input_nickname}>
-              <Link
-                to={link}
-                onClick={() => {
-                  if (login_guest == "Гость") {
-                    message.info("Зарегистрируйтесь, прежде чем сюда тыкать");
-                  }
-                }}
-              >
+              <Link to="/user">
                 <p className={style.input_nickname__text}>
-                  {login_guest == undefined
-                    ? (login_guest = "Гость")
-                    : (login_guest = Cookies.get("login"))}
+                  {Cookies.get("login")}
                 </p>
               </Link>
             </div>

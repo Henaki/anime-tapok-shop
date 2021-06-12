@@ -7,9 +7,8 @@ import 'antd/dist/antd.css';
 import Cookies from 'js-cookie'
 
 const FormLogin = () => {
-    const [visible, setVisible] = useState(false);
     let [user, setUser] = useState()
-    
+    const [visible, setVisible] = useState(false);
     const showDrawer = () => {
         setVisible(true);
 
@@ -30,7 +29,6 @@ const FormLogin = () => {
             Cookies.set('login', data.data.body.user)
             console.log(Cookies.get('jwt_token_debil'));
             console.log(Cookies.get('login'));
-            window.location.reload()
         });
 
     };
@@ -55,7 +53,7 @@ const FormLogin = () => {
                             <label for="password">Пароль</label>
                             <input ref={register} type="password" name="password" className={style.input_in_login} />
                         </div>
-                        <input type="submit" value="Авторизоваться" className={style.btn_from_login_form}/>
+                        <input type="submit" value="Авторизоваться" className={style.btn_from_login_form} />
                     </div>
                     <div className={style.links_to_kuda_to}>
                         <p className={style.again_password_text}>Забыли пароль?</p>

@@ -52,8 +52,8 @@
 }
 .main_userpage_form {
     width: 850px;
-    height: 970px;
-    margin-bottom: 50px;
+    height: 1070px;
+    margin-bottom: 150px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -100,13 +100,11 @@
 }
 .input_inf_in_field__style:focus {
     outline: none;
-    transition: 0.3s;
-    width: 250px;
 }
 .inform_on_user { 
     display: flex;
     flex-direction: column;
-    height: 570px;
+    height: 670px;
     justify-content: space-between;
     margin-top: 50px;
 }
@@ -120,5 +118,4 @@
     font-size: 36px;
     line-height: 6px;
     margin-bottom: 10px;
-    cursor: pointer;
 }

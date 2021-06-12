@@ -69,6 +69,7 @@
     font-size: 1.4em;
     font-weight: bold;
     color: #EE761F;
+    margin-right: 50px;
 }
 .button_from_buy:focus {
     outline: none;
