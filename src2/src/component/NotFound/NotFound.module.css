@@ -1,9 +1,0 @@
-.NotFoundPage {
-    display: flex;
-    flex-direction: column;
-    line-height: 80vh;
-    align-items: center;
-}
-h1 {
-    font-size: 3em;
-}

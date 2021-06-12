@@ -4,8 +4,8 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import Routing from './component/Routing/Routing';
-import state from './state';
-
+import WebFont from "webfontloader";
+WebFont.load({google: {families: ["Roboto:300,400,500"]}});
 
 
 

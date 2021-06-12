@@ -2,16 +2,26 @@ import React, { useState } from 'react'
 import { useForm } from "react-hook-form";
 import style from './FormSignUp.module.css'
 import axios from 'axios';
-import { message, Drawer } from 'antd';
+import { message, Drawer, notification } from 'antd';
 import 'antd/dist/antd.css';
 
-const FormSignUp = ({ setUser, user }) => {
-    const [visible, setVisible] = useState(false);
+const FormSignUp = () => {
+    const openNotification = () => {
+    notification.open({
+        message: 'Теперь авторизуйтесь',
+        description:
+          'Авторизуйтесь, потому что я не смог сделать нормально все это, извините.',
+        onClick: () => {
+          console.log('Notification Clicked!');
+        },
+      });
+     }
+    let [visibleSign, setVisibleSign] = useState(false)
     const showDrawer = () => {
-        setVisible(true);
+        setVisibleSign(true);
     };
     const onClose = () => {
-        setVisible(false);
+        setVisibleSign(false);
     };
 
     const { register, handleSubmit } = useForm();
@@ -20,6 +30,7 @@ const FormSignUp = ({ setUser, user }) => {
         console.log(me_die);
         axios.post('http://at-shop/api/signup', me_die).then((data) => {
             message.success("Регистрация прошла успешно");
+            openNotification()
         }).catch((error)=> {
             message.error("Что-то пошло не так")
         });
@@ -33,7 +44,7 @@ const FormSignUp = ({ setUser, user }) => {
                 placement="right"
                 closable={true}
                 onClose={onClose}
-                visible={visible}
+                visible={visibleSign}
             >
                 <form className={style.form_style_signup} onSubmit={handleSubmit(onSubmit)}>
                     <div className={style.form_signup_main}>
@@ -53,7 +64,7 @@ const FormSignUp = ({ setUser, user }) => {
                             <label for="confirm_password">Повторите пароль</label>
                             <input ref={register} type="password" name="password_confirm" className={style.input_in_signup} />
                         </div>
-                        <input type="submit" value="Зарегистрироваться" className={style.btn_from_signup_form} />
+                        <input type="submit" value="Зарегистрироваться" className={style.btn_from_signup_form}/>
                     </div>
                     <div className={style.links_to_kuda_to}>
                         <p className={style.again_password_text}>Забыли пароль?</p>

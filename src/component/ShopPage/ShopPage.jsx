@@ -8,9 +8,14 @@ import { Pagination } from "antd";
 import "antd/dist/antd.css";
 
 const ShopPage = () => {
+  let bool_cat = false;
   const [appState, setAppState] = useState([]);
   let [appStateCategory, setAppStateCategory] = useState([]);
   let url_item = "/item/";
+
+  const CheckedFunc = () => {
+    console.log(12312);
+  }
 
   useEffect(() => {
     const urlAPI = "http://at-shop/api/shop";
@@ -42,6 +47,7 @@ const ShopPage = () => {
               type="checkbox"
               name="filter"
               className={style.button_filter}
+
             />
           </label>
           <label className={style.filter_btn__text}>Фильтр</label>
@@ -54,21 +60,28 @@ const ShopPage = () => {
                   type="checkbox"
                   id={item.name}
                   className={style.checkbox_filter_none}
+                  checked={bool_cat}
                 />
                 <label
                   for={item.name}
                   className={style.checkbox_btn__filter}
                   onClick={() => {
-                    console.log(item.name);
-                    axios
-                      .post("http://at-shop/api/filter", [item.name])
-                      .then((data) => {
-                        console.log(data);
-                        const items_cat = data.data.data.content;
-                        setAppState(items_cat)
-                        console.log(appState);
-                      });
+                    if (!bool_cat) {
+                      bool_cat = true
+                      console.log(item.name);
+                      axios
+                        .post("http://at-shop/api/filter", [item.name])
+                        .then((data) => {
+                          console.log(data);
+                          const items_cat = data.data.data.content;
+                          setAppState(items_cat);
+                          console.log(appState);
+                        });
+                    } else {
+                      bool_cat = false
+                    }
                   }}
+
                 >
                   {item.name}
                 </label>
@@ -79,7 +92,9 @@ const ShopPage = () => {
         <div className={style.catalog_shop_border}>
           {appState.map((item) => {
             return (
-              <Link to={url_item + item.slag}>
+              <Link
+                onClick={() => { Cookies.set('item_slag', item.slag) }}
+                to="/item">
                 <div className={style.shop_catalog__tovar}>
                   <img src={item.photo} width="250px" height="100px" />
                   <h3>{item.name}</h3>
@@ -109,18 +124,13 @@ const ShopPage = () => {
                     }}
                     className={style.button_from_buy}
                   />
-                  <input
-                    type="submit"
-                    value="Заказать"
-                    className={style.button_from_bought}
-                  />
                 </div>
               </Link>
             );
           })}
         </div>
         <div className={style.pagination_border}>
-          <Pagination defaultCurrent={1} total={50} onChange={onChange} />
+          <Pagination defaultCurrent={1} total={50} onChange={onChange} style={{marginTop: "20px"}} />
         </div>
       </div>
     </section>

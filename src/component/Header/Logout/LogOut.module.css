@@ -1,0 +1,15 @@
+.button_logout_btn {
+    margin-bottom: 0;
+    outline: none;
+    font-size: 1.5em;
+    color: white;
+    background-color: #615c85;
+    border: none;
+    letter-spacing: 2px;
+    cursor: pointer;
+    align-self: center;
+}
+.button_logout_btn:hover {
+    transition: 0.4s;
+    color: black;
+}

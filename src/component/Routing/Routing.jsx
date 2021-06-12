@@ -12,8 +12,7 @@ import Footer from '../Footer/Footer';
 import ScrollUpButton from "react-scroll-up-button";
 import UserPage  from '../UserPage/UserPage';
 import UserBasket from '../UserBasket/UserBasket';
-import PaymentsItem from '../PaymentItem/PaymentsItem'
-
+import PaymentsItem from '../PaymentItem/PaymentsItem';
 
 
 const Routing = () => {

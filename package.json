@@ -21,7 +21,9 @@
     "react-scroll-up-button": "^1.6.4",
     "react-slick": "^0.28.1",
     "slick-carousel": "^1.8.1",
-    "web-vitals": "^1.1.0"
+    "typeface-roboto": "^1.1.13",
+    "web-vitals": "^1.1.0",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",
