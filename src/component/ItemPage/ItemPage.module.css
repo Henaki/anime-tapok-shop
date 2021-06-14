@@ -12,21 +12,19 @@
   justify-content: space-between;
 }
 .style_img_item {
-  width: 600px;
-  height: 690px;
+  width: 500px;
+  height: 590px;
 }
 .title_item > p {
   color: #611fcb;
   opacity: 0.9;
   font-weight: 100;
-  font-size: 48px;
-  line-height: 75px;
+  font-size: 24px;
   width: 500px;
 }
-.title_item,
 .price_item {
-  height: 90px;
-  width: 239px;
+  height: 50px;
+  width: 80px;
   border-bottom: 0.8px solid #d04fe6;
 }
 .inform_to_item_aside {
@@ -34,28 +32,47 @@
   flex-direction: column;
   height: 500px;
   justify-content: space-between;
+  width: 500px;
 }
 .price_item > p {
   font-weight: 300;
-  font-size: 48px;
-  line-height: 75px;
+  font-size: 36px;
   color: #8140d3;
 }
-.param_to_item {
+.category_item {
+  height: 60px;
   display: flex;
   width: 500px;
   justify-content: space-between;
+  align-items: center;
 }
-.param_to_item > label {
-  font-size: 36px;
+.category_item > label {
+  font-size: 32px;
   color: #6200ff;
-  height: 80px;
-  width: 239px;
   border-bottom: 0.8px solid #d04fe6;
 }
-.param_to_item > p {
-  font-size: 36px;
+.category_item > p {
+  font-size: 26px;
   color: #9e72e4;
+  margin-bottom: 0;
+}
+.weight_item {
+  height: 60px;
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.weight_item > label {
+  font-size: 32px;
+  color: #6200ff;
+  border-bottom: 0.8px solid #d04fe6;
+}
+.weight_item > p {
+  font-size: 26px;
+  color: #9e72e4;
+  margin-bottom: 0;
 }
 .param_to_item_size {
   display: flex;
@@ -63,11 +80,12 @@
   justify-content: space-between;
 }
 .param_to_item_size > p {
-  font-size: 36px;
+  font-size: 32px;
   color: #6200ff;
+  border-bottom: 0.8px solid #d04fe6;
 }
 .sizes_to_item {
-  width: 200px;
+  width: 226px;
   display: flex;
   justify-content: space-between;
 }
@@ -80,6 +98,7 @@
 .form_radio label {
   color: #9e72e4;
   font-size: 36px;
+  border-bottom: solid 0.8px #d04fe6;
 }
 
 .form_radio input[type="radio"]:checked + label {
@@ -97,6 +116,7 @@
   color: #6200ff;
 }
 .inf_item_words {
+  width: 500px;
   font-weight: 200;
   font-size: 24px;
   line-height: 42px;
@@ -131,7 +151,9 @@
   width: 40px;
   font-weight: bold;
 }
-
+.img_and_inf_item {
+  width: 500px;
+}
 .button_reg_count:hover {
   transition: 0.2s;
   cursor: pointer;
@@ -161,4 +183,8 @@
   transition: 0.3s;
   color: white;
   background-color: #cf661b;
+}
+.size_field__text {
+  font-size: 32px;
+  color: #9e72e4;
 }

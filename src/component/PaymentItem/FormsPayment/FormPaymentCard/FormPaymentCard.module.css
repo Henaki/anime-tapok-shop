@@ -1,0 +1,52 @@
+.input_data_to_pay {
+    width: 384px;
+    height: 66px;
+    border: 1px solid #DA8EF4;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #F5F3FF;
+    font-size: 36px;
+    text-align: center;
+}
+.input_data_to_pay:focus {
+    outline: none;
+    transition: 0.2s;
+    border: 1px solid #563462;
+    background-color: #efedf8;
+}
+
+.title_payment {
+    font-size: 48px;
+}
+
+/*card*/
+
+.input_data_to_pay_small {
+    width: 150px;
+    height: 66px;
+    border: 1px solid #DA8EF4;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #F5F3FF;
+    font-size: 28px;
+    text-align: center;
+}
+.input_data_to_pay_small:focus {
+    outline: none;
+    transition: 0.2s;
+    border: 1px solid #563462;
+    background-color: #efedf8;
+}
+
+.form_to_bottom_da {
+    display: flex;
+    width: 600px;
+    justify-content: space-between;
+}
+.form_card_mounth_year {
+    display: flex;
+    width: 350px;
+}
+.slash {
+    font-size: 48px;
+}

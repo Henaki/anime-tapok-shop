@@ -5,10 +5,11 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import axios from "axios";
-import Cookies from "js-cookie";
+import Cookies, { set } from "js-cookie";
+import { message } from "antd";
 
 const MainPage = () => {
-  let me_die = "/item/";
+  let [urlItem, setUrlItem] = useState("/item/");
   let [idItem, setIdItem] = useState(0);
   const [appStateItems, setAppStateItems] = useState([]);
   const [appStateItemsSlag, setAppStateItemsSlag] = useState({});
@@ -31,23 +32,25 @@ const MainPage = () => {
 
   return (
     <section className={style.background}>
+
       <div className={style.main_content_container}>
         <div className={style.main_slider}>
           <SimpleSlider />
         </div>
+
         <div className={style.main_catalog}>
           {appStateItems.slice(0, 5).map((item) => {
             return (
-              <Link
+              <div
                 data-aos="fade-up"
-                to={me_die + item.slag}
                 className={style.main_catalog__tovar}
               >
                 <img src={item.photo} width="200px" height="100px" />
-                <h3>{item.name}</h3>
+                <Link className={style.titlename_tovar} onClick={() => { Cookies.set('item_slag', item.slag) }}
+                  to="/item"> <h3>{item.name}</h3></Link>
                 <p>{item.price}₽</p>
                 <input
-                  type="submit"
+                  type="button"
                   value="В корзину"
                   onClick={() => {
                     const data = {
@@ -63,23 +66,20 @@ const MainPage = () => {
                       })
                       .then((data) => {
                         console.log(data);
+                        message.success("Товар добавлен в корзину")
                       })
                       .catch((error) => {
                         console.log(error);
+                        message.error("Войдите, прежде чем добавлять в корзину")
                       });
                   }}
                   className={style.button_from_buy}
                 />
-                <input
-                  type="submit"
-                  value="Заказать"
-                  className={style.button_from_bought}
-                />
-              </Link>
+              </div>
             );
           })}
         </div>
-        <Link data-aos="fade-up" to="/shop">
+        <Link to="/shop">
           <input
             type="submit"
             value="Перейти в каталог"
@@ -87,6 +87,7 @@ const MainPage = () => {
           />
         </Link>
       </div>
+
     </section>
   );
 };

@@ -10,7 +10,7 @@
 }
 .title_payments_item {
     width: 500px;
-    height: 100px;
+    height: 80px;
     border-bottom: 1px solid #D04FE6;
 }
 .radio_btn {
@@ -18,19 +18,84 @@
 }
 .radio_btn_style {
     content: "\a";
-    width: 35px;
-    height: 35px;
+    width: 20px;
+    height: 20px;
     border:solid 1px #AB87F9;
-    border-radius: 25px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.title_select_payment {
+    font-size: 24px;
+    font-weight: bold;
 }
 .radio_select_payment {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 500px;
+    height: 330px;
+    margin-top: 50px;
+}
+.border_radio_select_payment {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 }
 .radio_btn:checked~.radio_btn_style {
+    transition: 0.2s;
+    width: 25px;
+    height: 25px;
     background-color: #AB87F9;
 }
 .border_select_radio {
     display: flex;
+    font-size: 24px;
+    align-items: center;
+}
+.radio_btn__text {
+    margin-left: 10px;
+    cursor: pointer;
+}
+.payment_pay_border {
+    display: flex;
+    justify-content: space-between;
+    width: 1300px;
+}
+.data_for_payment {
+    width: 804px;
+    height: 420px;
+    border: solid 1px #BC6AFC;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F5F3FF;
+}
+.title_data_to_pay {
+    font-size: 48px;
+}
+
+.btn_for_zakaz {
+    width: 570px;
+    height: 70px;
+    background-color: white;
+    border: 2px solid #139630;
+    font-size: 48px;
+    line-height: 0px;
+    color: #139630;
+    cursor: pointer;
+    margin-bottom: 50px;
+    
+}
+
+.payments_item_border {
+    width: 1300px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }

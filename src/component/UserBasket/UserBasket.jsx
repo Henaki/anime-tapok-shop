@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import style from "./UserBasket.module.css";
 import { Link } from "react-router-dom";
-import state from "../../state";
 import axios from "axios";
-import Cookies from 'js-cookie'
+import Cookies from 'js-cookie';
+import { message } from 'antd';
+import 'antd/dist/antd.css';
 
 const UserBasket = () => {
+  const data_delete = []
   const [stateBasket, setStateBasket] = useState([]);
   let [countNumb, setCountNumb] = useState(1);
   let price = 0;
@@ -13,7 +15,7 @@ const UserBasket = () => {
     axios
       .get("http://at-shop/api/basket", {
         headers: {
-          Authorization: "Bearer " +  Cookies.get('jwt_token_debil'),
+          Authorization: "Bearer " + Cookies.get('jwt_token_debil'),
           "X-Requested-With": "XMLHttpRequest",
         },
       })
@@ -29,14 +31,6 @@ const UserBasket = () => {
     <>
       <div className={style.userbasket_border}>
         <p className={style.title_userbasket}>Корзина</p>
-        <div className={style.field_btn}>
-          <div className=""></div>
-          <input
-            type="submit"
-            value="Удалить"
-            className={style.button_from_delete_item}
-          />
-        </div>
         <div className={style.items_basket_and_nav}>
           <div className={style.field_nav}>
             <div className={style.navlink_menu_bar}>
@@ -61,6 +55,7 @@ const UserBasket = () => {
                     type="checkbox"
                     className={style.checkbox_basket}
                     id={item.id}
+                    onChange={() => data_delete.push(item.id)}
                   />
                   <label for={item.id} className={style.checkbox_basket__label}>
                     <img src="./galochka.jpg" width="35px" height="35px" />
@@ -108,9 +103,30 @@ const UserBasket = () => {
                 <p className={style.all_price__text}>Общая цена: {price} ₽</p>
                 <input
                   type="submit"
-                  value="Заказать"
-                  className={style.btn_for_zakaz}
+                  value="Удалить"
+                  className={style.button_from_delete_item}
+                  onClick={() => {
+                    console.log(Cookies.get('jwt_token_debil'));
+                    axios.delete('http://at-shop/api/basket',
+                      {
+                        data: data_delete,
+                        headers: {
+                          Authorization: "Bearer " + Cookies.get('jwt_token_debil'),
+                          "X-Requested-With": "XMLHttpRequest"
+                        }
+                      }).then((data) => {
+                        message.success('Товары успешно удалены')
+                        setTimeout(() => { window.location.reload() }, 2000)
+                      }).catch((err) => { debugger; console.log(err); })
+                  }}
                 />
+                <Link to="/pay">
+                  <input
+                    type="submit"
+                    value="Заказать"
+                    className={style.btn_for_zakaz}
+                  />
+                </Link>
               </div>
             </div>
           </div>

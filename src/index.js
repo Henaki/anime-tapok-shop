@@ -4,8 +4,6 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import Routing from './component/Routing/Routing';
-import state from './state';
-
 
 
 

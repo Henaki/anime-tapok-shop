@@ -23,6 +23,7 @@
 .main_catalog {
     display: flex;
     width: 1300px;
+    min-height: 10vh;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -44,10 +45,15 @@
     cursor: pointer;
     background-color: #e6e3f3;
 }
-.main_catalog__tovar > h3 {
+.main_catalog__tovar > .titlename_tovar > h3 {
     font-size: 1.8em;
     width: 400px;
     color: #7D7D7D;
+    padding: 20px;
+}
+.main_catalog__tovar > .titlename_tovar > h3:hover {
+    text-decoration: underline;
+    
 }
 .main_catalog__tovar > p {
     font-size: 2em;
@@ -69,7 +75,6 @@
     font-size: 1.4em;
     font-weight: bold;
     color: #EE761F;
-    margin-right: 50px;
 }
 .button_from_buy:focus {
     outline: none;

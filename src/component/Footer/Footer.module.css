@@ -7,7 +7,6 @@ footer {
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
-    height: 120px;
     border: solid 1px black;
     font-size: 1.3em;
     color: white;
